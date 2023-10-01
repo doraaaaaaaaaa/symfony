@@ -1,0 +1,24 @@
+<h1>Page show works !</h1>
+{{t}}
+{%if tt is empty%}
+<p>No element </p>
+{%else%}
+<table>
+<tr>
+<td>id</td>
+<td>name</td>
+<td>number of class</td>
+</tr>
+{%for student in tt%}
+<tr>
+    <td> {{student.id}}</td>
+    <td> {{student.name|upper}}</td>
+    <td> {{student.nb_classe}}</td>
+    </tr>
+
+{%endfor%}
+</table>
+{%endif%}
+
+<img src="/images/image1.avif">
+<a href='/showTeacher/{name}',

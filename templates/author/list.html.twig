@@ -1,0 +1,35 @@
+
+{% set number=0 %}
+ {% set books=0 %}
+
+{% if images is empty %}
+<p> no elements</p>
+{%else%}
+<table>
+
+<tr>
+<td>id</td>
+<td> picture</td>
+<td> username</td>
+<td> email</td>
+<td> nb_books</td>
+</tr>
+{% for authors in images %} 
+<tr>
+<td>{{authors.id}}</td>
+<td>  <img src="{{authors.picture}}"> </td>
+<td>{{authors.username|upper}}</td>
+<td>{{authors.email}}</td>
+<td>{{authors.nb_books}}</td>
+<td><a href="showlist">details</a>
+</tr>
+{% set number= number+1 %}
+ {% set books= books+authors.nb_books %}
+ 
+
+{% endfor %}
+    
+</table>
+<p> number of authors :  {{number}} </p>
+ <p> number of books :  {{books}} </p>
+{%endif%}
